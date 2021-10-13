@@ -14,8 +14,11 @@ public class EmployeeInfoClient {
 		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(BeanConfiguration.class);
 		EmployeeController employeeController = applicationContext.getBean(EmployeeController.class);
 		
-		Employee emp =Employee.builder().id(1).name("chandu").deptName("it").gender("male").salary(100000).build();
-		employeeController.saveEmployee(emp);
+		//Employee emp =Employee.builder().id(4).name("sai").deptName("it").gender("male").salary(200000).build();
+		//employeeController.saveEmployee(emp);
+		
+		Employee employee = employeeController.getEmployeeByName("divya");
+		System.out.println(employee);
 	}
 
 }
